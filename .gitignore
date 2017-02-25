@@ -15,3 +15,4 @@ docs/
 npm-debug.log
 .DS_Store
 .noflo.json
+.fusebox
