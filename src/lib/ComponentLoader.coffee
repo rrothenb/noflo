@@ -79,8 +79,11 @@ class ComponentLoader extends EventEmitter
         return callback err if err
         @load name, callback, metadata
       return
-
-    component = @components[name]
+    if name?.constructor?.name is 'Component'
+      component = name
+      name = 'anonymous'
+    else
+      component = @components[name]
     unless component
       # Try an alias
       for componentName of @components
@@ -124,8 +127,11 @@ class ComponentLoader extends EventEmitter
         return
       return callback Error "Dynamic loading of #{implementation} for component #{name} not available on this platform."
 
+    if implementation?.constructor?.name is 'Component'
+      instance = implementation
+
     # Attempt to create the component instance using the `getComponent` method.
-    if typeof implementation.getComponent is 'function'
+    else if typeof implementation.getComponent is 'function'
       try
         instance = implementation.getComponent metadata
       catch e
