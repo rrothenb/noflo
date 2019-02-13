@@ -1,5 +1,5 @@
 {
-  "name": "noflo",
+  "name": "@rrothenb/noflo",
   "description": "Flow-Based Programming environment for JavaScript",
   "keywords": [
     "fbp",
@@ -47,7 +47,7 @@
   "homepage": "http://noflojs.org/",
   "repository": {
     "type": "git",
-    "url": "git://github.com/noflo/noflo.git"
+    "url": "git://github.com/rrothenb/noflo.git"
   },
   "scripts": {
     "test": "nyc grunt test",

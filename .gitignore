@@ -18,3 +18,4 @@ npm-debug.log
 package-lock.json
 .DS_Store
 .noflo.json
+.idea
